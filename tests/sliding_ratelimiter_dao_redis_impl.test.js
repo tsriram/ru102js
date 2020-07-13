@@ -51,8 +51,7 @@ const runSlidingWindowTests = async (name, limiterOpts, howMany) => {
   return results;
 };
 
-// Challenge 7. Remove '.skip' to enable test.
-test.skip(`${testSuiteName}: hit (sliding window limit not exceeded)`, async () => {
+test(`${testSuiteName}: hit (sliding window limit not exceeded)`, async () => {
   const results = await runSlidingWindowTests('testresource', {
     interval: 10000,
     maxHits: 5,
@@ -61,8 +60,7 @@ test.skip(`${testSuiteName}: hit (sliding window limit not exceeded)`, async () 
   expect(results).toStrictEqual([4, 3, 2, 1, 0]);
 });
 
-// Challenge 7. Remove '.skip' to enable test.
-test.skip(`${testSuiteName}: hit (sliding window limit exceeded)`, async () => {
+test(`${testSuiteName}: hit (sliding window limit exceeded)`, async () => {
   let results = await runSlidingWindowTests('testresource2', {
     interval: 10000,
     maxHits: 5,
@@ -78,8 +76,7 @@ test.skip(`${testSuiteName}: hit (sliding window limit exceeded)`, async () => {
   expect(results).toStrictEqual([4, 3, 2, 1, 0, -1, -1, -1]);
 });
 
-// Challenge 7. Remove '.skip' to enable test.
-test.skip(`${testSuiteName}: hit (sliding window ensure window slides)`, async () => {
+test(`${testSuiteName}: hit (sliding window ensure window slides)`, async () => {
   const sliderName = 'testresource4';
   const sliderOpts = {
     interval: 2000,
